@@ -67,79 +67,83 @@ const initialUsers = async () => {
 const initialMovies = async (bizId) => {
   let movies = [
     {
-      title: "Inception",
+      title: "Fast and Furious ",
       description:
-        "A thief who enters the dreams of others to steal secrets from their subconscious.",
-      year: 2010,
-      category: ["Action", "Sci-Fi", "Thriller"],
-      director: "Christopher Nolan",
-      actors: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
-      trailer: "https://www.youtube.com/watch?v=YoHD9XEInc0",
-      watchLink: "https://www.example.com/inception",
+        "Dominic Toretto is forced to put his retirement on hold when Cipher, the dangerous cyberterrorist, escapes with the help of Dominic's estranged brother, an international terrorist",
+      year: 2021,
+      category: ["Action"],
+      director: "Justin Lin",
+      actors: ["Vin Diesel", "Paul Walker", "Brandon T"],
+      trailer:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/b1e2759a-9099-40e9-a6eb-387f85ee24e8.mp4?alt=media",
+      watchLink:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/b1e2759a-9099-40e9-a6eb-387f85ee24e8.mp4?alt=media",
       image: [
         {
-          url: "https://example.com/inception_poster.jpg",
-          alt: "Inception Poster",
+          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/c2ffb566-4940-4418-bf85-2fae2480b708.jpeg?alt=media",
+          alt: "Fast and Furious ",
         },
         {
-          url: "https://example.com/inception_still1.jpg",
-          alt: "Inception Still 1",
-        },
-        {
-          url: "https://example.com/inception_still2.jpg",
-          alt: "Inception Still 2",
+          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/2424a95e-5503-4274-bf36-9276124ce0f2.jpeg?alt=media",
+          alt: "Fast and Furious ",
         },
       ],
       user_id: bizId,
     },
     {
-      title: "The Dark Knight",
+      title: "The School For Good And Evil",
       description:
-        "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-      year: 2008,
-      category: ["Action", "Crime", "Drama"],
-      director: "Christopher Nolan",
-      actors: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-      trailer: "https://www.youtube.com/watch?v=EXeTwQWrcwY",
-      watchLink: "https://www.example.com/dark-knight",
+        "est friends Sophie and Agatha find themselves on opposing sides of an epic battle when they're swept away into an enchanted school where aspiring heroes and villains are trained to protect the balance between good and evil.",
+      year: 2022,
+      category: ["Drama", "Fantasy"],
+      director: "Paul Feig",
+      actors: [
+        "Sophia Anne Caruso",
+        "Sofia Wylie",
+        "Laurel Jones",
+        "Charlize Theron",
+      ],
+      trailer:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/4e1c6adb-8f19-49b4-b590-79b5402d1234.mp4?alt=media",
+      watchLink:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/4e1c6adb-8f19-49b4-b590-79b5402d1234.mp4?alt=media",
       image: [
         {
-          url: "https://example.com/dark_knight_poster.jpg",
-          alt: "The Dark Knight Poster",
+          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/99abbb7b-38b4-4116-895e-34d3a2fc1d00.jpeg?alt=media",
+          alt: "The School For Good And Evil",
         },
         {
-          url: "https://example.com/dark_knight_still1.jpg",
-          alt: "The Dark Knight Still 1",
-        },
-        {
-          url: "https://example.com/dark_knight_still2.jpg",
-          alt: "The Dark Knight Still 2",
+          url: "https://statcdn.fandango.com/MPX/image/NBCU_Fandango/633/458/thumb_B8255288-8232-486F-8B44-F69911702F74.jpg",
+          alt: "The School For Good And Evil ",
         },
       ],
       user_id: bizId,
     },
     {
-      title: "Interstellar",
+      title: "Captain America",
       description:
-        "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        "As Steve Rogers adapts to the complexities of a contemporary world, he joins Natasha Romanoff and Sam Wilson in his mission to uncover the secret behind a deadly, mysterious assassin.",
       year: 2014,
-      category: ["Adventure", "Drama", "Sci-Fi"],
-      director: "Christopher Nolan",
-      actors: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
-      trailer: "https://www.youtube.com/watch?v=zSWdZVtXT7E",
-      watchLink: "https://www.example.com/interstellar",
+      category: ["Action", "Adventure"],
+      director: "Anthony Russo",
+      actors: [
+        "Chris Evans",
+        "Sebastian Stan",
+        "Scarlett Johansson",
+        "Samuel L. Jackson",
+      ],
+      trailer:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/605dafa2-89fe-45f5-bf4b-b12e41e020d4.mp4?alt=media",
+      watchLink:
+        "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/605dafa2-89fe-45f5-bf4b-b12e41e020d4.mp4?alt=media",
       image: [
         {
-          url: "https://example.com/interstellar_poster.jpg",
-          alt: "Interstellar Poster",
+          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/0525df0f-1726-4d06-8850-bdbfb4911ac1.jpeg?alt=media",
+          alt: "Captain America",
         },
         {
-          url: "https://example.com/interstellar_still1.jpg",
-          alt: "Interstellar Still 1",
-        },
-        {
-          url: "https://example.com/interstellar_still2.jpg",
-          alt: "Interstellar Still 2",
+          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/2a2e4d2f-10cd-4a2f-88d3-045b174166ca.jpeg?alt=media",
+          alt: "captin America",
         },
       ],
       user_id: bizId,

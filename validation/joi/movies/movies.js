@@ -9,15 +9,18 @@ const moviesSchema = Joi.object({
   actors: Joi.array().items(Joi.string()).required(),
   trailer: Joi.string()
     .uri({ scheme: ["http", "https"] })
-    .min(14),
+    .min(14)
+    .required(),
   watchLink: Joi.string()
     .uri({ scheme: ["http", "https"] })
     .min(14),
   image: Joi.array().items(
-    Joi.object().keys({
-      url: Joi.string().uri({ scheme: ["http", "https"] }),
-      alt: Joi.string().min(2).max(256).allow(""),
-    })
+    Joi.object()
+      .keys({
+        url: Joi.string().uri({ scheme: ["http", "https"] }),
+        alt: Joi.string().min(2).max(256).allow(""),
+      })
+      .required()
   ),
 });
 
