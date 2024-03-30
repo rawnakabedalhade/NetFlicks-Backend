@@ -56,15 +56,15 @@ const loginController = async (req, res) => {
     const mailOptions = {
       from: "rawnakabedalhade@gmail.com",
       to: user.email,
-      subject: "nodemailer notification",
+      subject: "NetFlicks notification",
       text: "Welcome back to our website ,your login is successful",
       html: `
-    <div style="font-family: Arial, sans-serif; color: #333; background-color: #f5f5f5; padding: 20px;">
-      <h2 style="color: #007bff;">Welcom back ${
-        user.name.first + " " + user.name.last
-      }</h2>
-      <p style="font-size: 16px;"> We look forward to serving you!</p>
-    </div>
+    <div style="font-family: Arial, sans-serif; color: #fff; background-color: #000; padding: 20px;">
+  <h2 style="color: #db0000;">Welcome back, ${
+    user.name.first + " " + user.name.last
+  }</h2>
+  <p style="font-size: 16px;">We look forward to serving you!, NetFlicks Team.</p>
+</div>
   `,
     };
     tramsporter.sendMail(mailOptions, function (error, info) {
@@ -103,15 +103,16 @@ const registerController = async (req, res) => {
     const mailOptions = {
       from: "rawnakabedalhade@gmail.com",
       to: newUser.email,
-      subject: "nodemailer notification",
+      subject: "NetFlicks notification",
       text: "Your registeration is successful",
       html: `
-    <div style="font-family: Arial, sans-serif; color: #333; background-color: #f5f5f5; padding: 20px;">
-      <h2 style="color: #007bff;">Your registration is successful ${
-        newUser.name.first + " " + newUser.name.last
-      }</h2>
-      <p style="font-size: 16px;">Thank you for registering with us. We look forward to serving you!</p>
-    </div>
+ <div style="font-family: Arial, sans-serif; color: #fff; background-color: #000; padding: 20px;">
+  <h2 style="color: #db0000;">Welcome back, ${
+    user.name.first + " " + user.name.last
+  }</h2>
+  <p style="font-size: 16px;">We look forward to serving you! NetFlicks Team.</p>
+</div>
+
   `,
     };
     tramsporter.sendMail(mailOptions, function (error, info) {

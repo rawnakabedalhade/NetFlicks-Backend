@@ -34,7 +34,7 @@ const movieSchema = new mongoose.Schema({
   actors: [String],
   trailer: URL,
   watchLink: URL,
-  image: [Image],
+  image: Image,
   likes: [],
   createdAt: {
     type: Date,

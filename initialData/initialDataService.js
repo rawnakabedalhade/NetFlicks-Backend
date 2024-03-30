@@ -78,16 +78,10 @@ const initialMovies = async (bizId) => {
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/b1e2759a-9099-40e9-a6eb-387f85ee24e8.mp4?alt=media",
       watchLink:
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/b1e2759a-9099-40e9-a6eb-387f85ee24e8.mp4?alt=media",
-      image: [
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/c2ffb566-4940-4418-bf85-2fae2480b708.jpeg?alt=media",
-          alt: "Fast and Furious ",
-        },
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/2424a95e-5503-4274-bf36-9276124ce0f2.jpeg?alt=media",
-          alt: "Fast and Furious ",
-        },
-      ],
+      image: {
+        url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/c2ffb566-4940-4418-bf85-2fae2480b708.jpeg?alt=media",
+        alt: "Fast and Furious ",
+      },
       user_id: bizId,
     },
     {
@@ -107,16 +101,11 @@ const initialMovies = async (bizId) => {
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/4e1c6adb-8f19-49b4-b590-79b5402d1234.mp4?alt=media",
       watchLink:
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/4e1c6adb-8f19-49b4-b590-79b5402d1234.mp4?alt=media",
-      image: [
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/99abbb7b-38b4-4116-895e-34d3a2fc1d00.jpeg?alt=media",
-          alt: "The School For Good And Evil",
-        },
-        {
-          url: "https://statcdn.fandango.com/MPX/image/NBCU_Fandango/633/458/thumb_B8255288-8232-486F-8B44-F69911702F74.jpg",
-          alt: "The School For Good And Evil ",
-        },
-      ],
+      image: {
+        url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/99abbb7b-38b4-4116-895e-34d3a2fc1d00.jpeg?alt=media",
+        alt: "The School For Good And Evil",
+      },
+
       user_id: bizId,
     },
     {
@@ -136,16 +125,11 @@ const initialMovies = async (bizId) => {
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/605dafa2-89fe-45f5-bf4b-b12e41e020d4.mp4?alt=media",
       watchLink:
         "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/605dafa2-89fe-45f5-bf4b-b12e41e020d4.mp4?alt=media",
-      image: [
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/0525df0f-1726-4d06-8850-bdbfb4911ac1.jpeg?alt=media",
-          alt: "Captain America",
-        },
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/2a2e4d2f-10cd-4a2f-88d3-045b174166ca.jpeg?alt=media",
-          alt: "captin America",
-        },
-      ],
+      image: {
+        url: "https://firebasestorage.googleapis.com/v0/b/netflixo-minah.appspot.com/o/0525df0f-1726-4d06-8850-bdbfb4911ac1.jpeg?alt=media",
+        alt: "Captain America",
+      },
+
       user_id: bizId,
     },
   ];

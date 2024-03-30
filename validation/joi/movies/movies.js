@@ -14,18 +14,13 @@ const moviesSchema = Joi.object({
   watchLink: Joi.string()
     .uri({ scheme: ["http", "https"] })
     .min(14),
-  image: Joi.array().items(
-    Joi.object()
-      .keys({
-        url: Joi.string().uri({ scheme: ["http", "https"] }),
-        alt: Joi.string().min(2).max(256).allow(""),
-      })
-      .required()
-  ),
+  image: Joi.object().keys({
+    url: Joi.string().uri({ scheme: ["http", "https"] }),
+    alt: Joi.string().min(2).max(256).allow(""),
+  }),
 });
 
 const moviesSchemaValidation = (movieInput) => {
   return moviesSchema.validateAsync(movieInput);
 };
-
 export default moviesSchemaValidation;
