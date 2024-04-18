@@ -20,7 +20,6 @@ const updateUser = (id, userData) => {
   return User.findByIdAndUpdate(id, userData, { new: true });
 };
 const patchIsBiz = (id, isBusiness) => {
-  console.log("fromservice");
   return User.updateOne({ _id: id }, { isBusiness: isBusiness });
 };
 

@@ -1,4 +1,5 @@
 import express from "express";
+import nodemailer from "nodemailer";
 import {
   deleteUserController,
   getAllUsersController,
@@ -7,6 +8,8 @@ import {
   updateUserController,
   patchIsBizController,
   getUserByIdController,
+  forgotPasswordController,
+  resetPasswordController,
 } from "../../controllers/users.controller.js";
 import bodyValidationMiddleWare from "../../middlewares/bodyValidation.mw.js";
 import {
@@ -18,6 +21,9 @@ import {
 import authMiddleware from "../../middlewares/auth.mw.js";
 import adminOrOwn from "../../middlewares/adminOrOwn.mw.js";
 import objectIdParamsValidationMiddleware from "../../middlewares/objectIdParamsValidation.mw.js";
+import User from "../../model/mongodb/users/User.js";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 const router = express.Router();
 
@@ -67,4 +73,10 @@ router.patch(
   adminOrOwn,
   patchIsBizController
 );
+// Route for sending reset password email
+router.post("/forgot-password", forgotPasswordController);
+
+// Route for resetting password
+router.post("/reset-password/:id/:token", resetPasswordController);
+
 export default router;

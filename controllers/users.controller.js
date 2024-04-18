@@ -14,6 +14,7 @@ import isLockoutExpired from "../utils/isLockOutExpired.js";
 import updateUserFailedLoginInfo from "../utils/updateUserFailedLoginInfo.js";
 import nodemailer from "nodemailer";
 import debug from "debug";
+import User from "../model/mongodb/users/User.js";
 
 const loginController = async (req, res) => {
   try {
@@ -179,6 +180,66 @@ const patchIsBizController = async (req, res) => {
   }
 };
 
+const forgotPasswordController = async (req, res) => {
+  try {
+    let user = await getUserByEmail(req.body.email);
+    console.log(user);
+    if (!user) {
+      return res.send({ Status: "User not existed" });
+    }
+    let token = await generateToken({
+      _id: user._id,
+      isAdmin: user.isAdmin,
+      isBusiness: user.isBusiness,
+    });
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "rawnakabedalhade@gmail.com",
+        pass: process.env.PASS_MAILER,
+      },
+    });
+
+    let mailOptions = {
+      from: "rawnakabedalhade@gmail.com",
+      to: req.body.email,
+      subject: "Reset Password Link",
+      text: `http://localhost:3000/reset-password/${user._id}/${token}`,
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        return res.send({ Status: "Success" });
+      }
+    });
+    res.send({ message: "Check You Email" });
+  } catch (err) {
+    handleError(res, 400, err.message);
+  }
+};
+
+const resetPasswordController = async (req, res) => {
+  try {
+    let { id, token } = req.params;
+    const { password } = req.body;
+    let user = await getUserById(id);
+    if (!user) {
+      return res.status(404).json({ message: "Invalid User" });
+    }
+    let passwordHash = await generateHash(req.body.password);
+    req.body.password = passwordHash;
+    let updatedUser = await User.findByIdAndUpdate(id, {
+      password: passwordHash,
+    });
+    updatedUser.password = undefined;
+    res.send("update password");
+  } catch (err) {
+    // Handle errors
+    handleError(res, 400, err.message);
+  }
+};
+
 export {
   loginController,
   registerController,
@@ -187,4 +248,6 @@ export {
   deleteUserController,
   patchIsBizController,
   getUserByIdController,
+  forgotPasswordController,
+  resetPasswordController,
 };

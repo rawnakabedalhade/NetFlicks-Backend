@@ -8,13 +8,10 @@ const createMovie = (movieData) => {
 
 //read
 const getAllMovies = async () => {
-  console.log(3);
   return await Movie.find();
 };
 
 const getAllMyMovies = (user_id) => {
-  console.log(user_id, "my");
-  console.log(Movie.find({ user_id: user_id }), "mymovies");
   return Movie.find({ user_id: user_id });
 };
 
