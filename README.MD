@@ -309,3 +309,7 @@ In the request body, provide an object with the following key and value:
 | email | string | 7   | 20  | required |
 
 -If the reset token is valid and the password is successfully updated, a success message will be sent back.
+
+## License
+
+Rawnak Abed Alhade.
