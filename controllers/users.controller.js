@@ -109,7 +109,7 @@ const registerController = async (req, res) => {
       html: `
  <div style="font-family: Arial, sans-serif; color: #fff; background-color: #000; padding: 20px;">
   <h2 style="color: #db0000;">Welcome back, ${
-    user.name.first + " " + user.name.last
+    newUser.name.first + " " + newUser.name.last
   }</h2>
   <p style="font-size: 16px;">We look forward to serving you! NetFlicks Team.</p>
 </div>
@@ -204,7 +204,49 @@ const forgotPasswordController = async (req, res) => {
       from: "rawnakabedalhade@gmail.com",
       to: req.body.email,
       subject: "Reset Password Link",
-      text: `http://localhost:3000/reset-password/${user._id}/${token}`,
+      subject: "Reset Password Link",
+      html: `
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          .link {
+            color: #007bff;
+          }
+          .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h2>Reset Password Link</h2>
+          </div>
+          <p>Dear User,</p>
+          <p>You have requested to reset your password. Please click on the link below to reset your password:</p>
+          <p><a href="http://localhost:3000/reset-password/${user._id}/${token}" class="link">Reset Password Link</a></p>
+          <p>Thank you,</p>
+          <p class="footer">NetFlicks Support Team</p>
+        </div>
+      </body>
+    </html>
+  `,
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
@@ -213,7 +255,7 @@ const forgotPasswordController = async (req, res) => {
         return res.send({ Status: "Success" });
       }
     });
-    res.send({ message: "Check You Email" });
+    res.send("Check Your Email");
   } catch (err) {
     handleError(res, 400, err.message);
   }
@@ -233,7 +275,7 @@ const resetPasswordController = async (req, res) => {
       password: passwordHash,
     });
     updatedUser.password = undefined;
-    res.send("update password");
+    res.send("password updated");
   } catch (err) {
     // Handle errors
     handleError(res, 400, err.message);
