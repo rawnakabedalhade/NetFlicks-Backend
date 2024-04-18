@@ -284,7 +284,7 @@ In the request body you will need to provide an object with the following keys a
 ### Forgot Password API
 
 ```http
-POST /api/users/forgot-password
+  POST /api/users/forgot-password
 ```
 
 In the request body, provide an object with the following key and value:
@@ -299,7 +299,7 @@ In the request body, provide an object with the following key and value:
 ### Reset Password API
 
 ```http
-POST /api/users/reset-password/:id/:token
+  POST /api/users/reset-password/:id/:token
 ```
 
 In the request body, provide an object with the following key and value:
